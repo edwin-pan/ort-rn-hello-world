@@ -39,3 +39,8 @@ npx expo prebuild
 ```bash
 npm run ios
 ```
+
+## Hard cleanup 
+```bash
+rm -rf ios/ android/ node_modules/ yarn.lock
+```
