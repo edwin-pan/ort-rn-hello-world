@@ -6,7 +6,7 @@ import { Asset } from 'expo-asset';
 
 let myModel: ort.InferenceSession;
 
-async function loadModel() {
+async function load_model() {
   try {
     const assets = await Asset.loadAsync(require('./assets/mnist.ort'));
     const modelUri = assets[0].localUri;
@@ -24,7 +24,7 @@ async function loadModel() {
   }
 }
 
-async function runModel() {
+async function run_model() {
   try {
     const inputData = new Float32Array(28 * 28);
     const feeds:Record<string, ort.Tensor> = {};
@@ -48,8 +48,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>using ONNX Runtime for React Native</Text>
-      <Button title='Load model' onPress={loadModel}></Button>
-      <Button title='Run' onPress={runModel}></Button>
+      <Button title='Load model' onPress={load_model}></Button>
+      <Button title='Run' onPress={run_model}></Button>
       <StatusBar style="auto" />
     </View>
   );
